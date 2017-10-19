@@ -398,7 +398,8 @@ function runFriendQuery()
 				//	  -  -  -   (minus)
 				//   [3, 2, 1...] = 2, 0, 2
 				var difference = Math.abs(parseInt(newFriend.scores[j]) - parseInt(friendData[i].scores[j]));
-				console.log("dif " + difference);
+				
+				//console.log("dif " + difference);
 
 				//Store a running sum for total difference. so each time we loop through of the 10 results
 				//we're adding each diffence for 10 loops(10 elements stored inside scores[] array)
