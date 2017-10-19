@@ -5,6 +5,7 @@
 var friendsArray = [
 
 	{
+		//default user
 		name: "Hungry",
 		photo: "http://i.imgur.com/1VLKJrZ.gif",
 		scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
