@@ -22,7 +22,7 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//
+//Added in order for heroku to work
 app.use(express.static(path.join(__dirname, 'public')));
 
 

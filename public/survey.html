@@ -293,10 +293,13 @@ function validateDropDownMenu()
         	//Selects <option value=#> avoiding selecting 1 (strongly disagree)
         	//this obtains value at a particular <select id=q1...q10> or particular question
         	var id = document.getElementById("q" + i);
-			var theValue = id.options[id.selectedIndex].value;
 
-			//push choice of particular question onto qArray
-			qArray.push(theValue);
+          //theValue = to the selected value of each of the 10 drop down menu(1 to 5(strongly agree))
+          //NOTE: Same As $(#q" + i).val()
+			    var theValue = id.options[id.selectedIndex].value;
+
+			   //push choice of particular question onto qArray
+			   qArray.push(theValue);
 			
 
         	
@@ -327,20 +330,20 @@ function runPost()
 	//This is very similar to the standard ajax function we used.
 	//Essentially we give it a URL, we give it the object we want to send, then
 	//we have a "callback"
-	//The callback is the response of the server. Inour case, we set up code in api-routes
+	//The callback is the response of the server. In our case, we set up code in api-routes
 	//that returns true or false depending if table is availible or not.
 	$.post("/api/friends", newFriend, function(data)
 	{
+
+    //NOTE: (data)-> comes from apiRoutes/app.post("api/friends")/res.json(true) = true
 		if(data)
 		{
 			console.log(newFriend.scores);
 			//alert("Friend Added!!!");
 
-			//launches the modal at this point in the code when user has
+			
 			//succesfully entered a new friend inside the friendsArray
 			// at localhost:3000/api/friends
-			//$("#myModal").modal('show');
-
 			runFriendQuery();
 
 		}
@@ -423,6 +426,7 @@ function runFriendQuery()
 		
 		var indexOfSmallestObject = arrayOfTotalDifference.indexOf(small); 
 
+    //Launching Modal
 		//Now that we know the location(index) of the friendArray that contians 
 		//the object that is compatible with newFriend, we can now post
 		//the object's name && photo inside the modal.
@@ -434,6 +438,8 @@ function runFriendQuery()
 
 		//Display modal
 		$("#myModal").modal('show');
+
+    
 
 
 
